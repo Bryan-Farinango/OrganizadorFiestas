@@ -87,10 +87,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#80F0FA"
+        android:onClick="funcionBoton"
         android:shadowColor="#FFFFFF"
         android:text="Agregar"
         android:textColor="#000000"
         android:textColorLink="#FFFFFF"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="493dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInstagram"
+        app:layout_constraintVertical_bias="0.224" />
 </androidx.constraintlayout.widget.ConstraintLayout>

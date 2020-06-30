@@ -2,12 +2,21 @@ package com.example.organizadorfiestas;
 
 public class Invitado {
 
+    public String uid;
     public String nombre;
     public String edad;
     public String celular;
     public String instagram;
 
     public Invitado() {
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getNombre() {

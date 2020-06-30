@@ -8,12 +8,22 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText nombre, edad, celular, instagram;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +34,13 @@ public class MainActivity extends AppCompatActivity {
         edad = findViewById(R.id.txtEdad);
         celular = findViewById(R.id.txtCelular);
         instagram = findViewById(R.id.txtInstagram);
+        inicializarFirebase();
+    }
 
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
     }
 
     @Override
@@ -37,24 +53,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState, persistentState);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+    public void funcionBoton(View v) {
 
         String name = nombre.getText().toString();
+        String age = edad.getText().toString();
+        String phone = celular.getText().toString();
+        String insta = instagram.getText().toString();
 
-        switch (item.getItemId()){
-            case R.id.btnAgregar:{
-                if(nombre.equals("")){
-                    validacion();
+                if(nombre.getText().toString().equals("") || edad.getText().toString().equals("") || celular.getText().toString().equals("") || instagram.getText().toString().equals("")){
+
+                    Toast.makeText(this, "Campos vacio", Toast.LENGTH_SHORT).show();
+
                 }else {
+                    Invitado invitado = new Invitado();
+                    invitado.setUid(UUID.randomUUID().toString());
+                    invitado.setNombre(name);
+                    invitado.setEdad(age);
+                    invitado.setCelular(phone);
+                    invitado.setInstagram(insta);
+                    databaseReference.child("Invitado").child(invitado.getUid()).setValue(invitado);
+
                     Toast.makeText(this, "Agregado", Toast.LENGTH_SHORT).show();
                     limpiarCajas();
-                    break;
                 }
 
-            }
-        }
-        return true;
+
     }
 
     private void limpiarCajas() {
