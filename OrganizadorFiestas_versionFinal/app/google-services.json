@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "840623326648",
+    "firebase_url": "https://pruebacrud-8f933.firebaseio.com",
+    "project_id": "pruebacrud-8f933",
+    "storage_bucket": "pruebacrud-8f933.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840623326648:android:7eac052b45d0d3e6f8fb4d",
+        "android_client_info": {
+          "package_name": "com.example.organizadorfiestas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840623326648-tk3n57ev3chdks0l074tegb2q5auj604.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.organizadorfiestas",
+            "certificate_hash": "28f03e303f47be8dc14346ac2ea55383633a32ef"
+          }
+        },
+        {
+          "client_id": "840623326648-e4v99dp2ks9c8d1pfk7ok72lkgmdpfm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAItgkOJTsqYCLKqfWDf_CbVb_r8bD1a6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840623326648-e4v99dp2ks9c8d1pfk7ok72lkgmdpfm8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
